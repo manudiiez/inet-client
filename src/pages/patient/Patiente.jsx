@@ -13,12 +13,16 @@ const Patiente = () => {
     const { createAlert } = useToast()
 
     const handleSubmit = async (type, origin) => {
+
+
         try {
             const alert = {
                 type: type,
                 origin: origin,
                 fullname: user.username,
-                startdate: new Date()
+                startdate: new Date(),
+                idArea: user.idArea,
+                nameArea: user.nameArea,
             }
             const res = await axios.post(`${uri}/alert/`, alert);
             console.log(res);
@@ -66,7 +70,7 @@ const Patiente = () => {
                                     title: 'Alerta normal en el baño emitida',
                                     icon: 'success',
                                 })
-                                createAlert('Necesitan ayuda en el baño')
+                                createAlert('Necesitan ayuda en el baño del area ' + user.nameArea)
                                 handleSubmit('normal', 'baño')
 
                             } else if (
@@ -77,7 +81,7 @@ const Patiente = () => {
                                     title: 'Alerta normal en la cama emitida',
                                     icon: 'success',
                                 })
-                                createAlert('Necesitan ayuda en la cama')
+                                createAlert('Necesitan ayuda en la cama del area' + user.nameArea)
                                 handleSubmit('normal', 'cama')
                             }
                         })
@@ -100,7 +104,7 @@ const Patiente = () => {
                                     title: 'Alerta urgente en el baño emitida',
                                     icon: 'success',
                                 })
-                                createAlert('Necetitan ayuda urgente en la baño')
+                                createAlert('Necetitan ayuda urgente en la baño del area' + user.nameArea)
                                 handleSubmit('urgente', 'baño')
 
                             } else if (
@@ -111,7 +115,7 @@ const Patiente = () => {
                                     title: 'Alerta urgente en la cama emitida',
                                     icon: 'success',
                                 })
-                                createAlert('Necetitan ayuda urgente en la cama')
+                                createAlert('Necetitan ayuda urgente en la cama del area ' + user.nameArea)
                                 handleSubmit('urgente', 'cama')
 
                             }
