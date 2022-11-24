@@ -39,7 +39,7 @@ const ProtectedPriorityRoute = ({ children }) => {
 function App() {
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/login" element={<ItemSignInContainer />} />
           <Route path="/" element={
@@ -69,9 +69,8 @@ function App() {
             </ProtectedRoute>
           } />
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
 
-      <h1>Hola</h1>
     </>
   );
 }
