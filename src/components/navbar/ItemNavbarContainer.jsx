@@ -1,14 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext'
 
 const ItemNavbarContainer = () => {
+  const { dispatch } = useContext(AuthContext);
+
+  const logOut = async () => {
+    dispatch({ type: "LOGOUT" });
+  }
   return (
     <Container>
       <div className="container-lg">
         <div className="brand">
           <p>MiSalud</p>
-          <svg data-name="Layer 1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11,12v1H10a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V15h1a1,1,0,0,0,0-2H13V12a1,1,0,0,0-2,0Zm10.66406-1.74756-9-8a.99893.99893,0,0,0-1.32812,0l-9,8a.99991.99991,0,0,0,1.32812,1.49512L4,11.449V21a.99974.99974,0,0,0,1,1H19a.99974.99974,0,0,0,1-1V11.449l.33594.29859a.99991.99991,0,0,0,1.32812-1.49512ZM18,20H6V9.6712l6-5.33331L18,9.6712Z" fill="#6563ff"/></svg>
+          <svg data-name="Layer 1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11,12v1H10a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V15h1a1,1,0,0,0,0-2H13V12a1,1,0,0,0-2,0Zm10.66406-1.74756-9-8a.99893.99893,0,0,0-1.32812,0l-9,8a.99991.99991,0,0,0,1.32812,1.49512L4,11.449V21a.99974.99974,0,0,0,1,1H19a.99974.99974,0,0,0,1-1V11.449l.33594.29859a.99991.99991,0,0,0,1.32812-1.49512ZM18,20H6V9.6712l6-5.33331L18,9.6712Z" fill="#6563ff" /></svg>
         </div>
         <nav>
           <ul>
@@ -17,6 +23,9 @@ const ItemNavbarContainer = () => {
             </li>
             <li>
               <NavLink to='/alert'>Alerta</NavLink>
+            </li>
+            <li>
+              <a href='!#' onClick={logOut}>LogOut</a>
             </li>
           </ul>
         </nav>
