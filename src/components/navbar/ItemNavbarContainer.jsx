@@ -25,7 +25,7 @@ const ItemNavbarContainer = () => {
               <NavLink to='/alert'>Alerta</NavLink>
             </li>
             <li>
-              <p onClick={logOut}>LogOut</p>
+              <p onClick={logOut}>Logout</p>
             </li>
           </ul>
         </nav>
