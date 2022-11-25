@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import axios from 'axios'
 import { useAuth } from '../../context/AuthContext'
 import { uri } from '../../utils/uri'
+import ItemNavbar from '../../components/navbar/ItemNavbar'
 
 const Patiente = () => {
 
@@ -127,6 +128,9 @@ const Patiente = () => {
     }
     return (
         <Container>
+            {
+                user.rol === 'paciente' && <ItemNavbar/>
+            }
             <button onClick={handleClick}>Ayuda</button>
         </Container>
     )
