@@ -25,7 +25,7 @@ const ItemNavbarContainer = () => {
               <NavLink to='/alert'>Alerta</NavLink>
             </li>
             <li>
-              <a href='!#' onClick={logOut}>LogOut</a>
+              <p onClick={logOut}>LogOut</p>
             </li>
           </ul>
         </nav>
@@ -75,10 +75,11 @@ const Container = styled.header`
         align-items: center;
         gap: 14px;
         li{
-          a{
+          a, p{
             text-decoration: none;
             color: #000;
             font-size: 18.2px;
+            margin:0 ;
 
             &:hover{
               color: #6150FF;
