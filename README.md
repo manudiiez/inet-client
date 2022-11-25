@@ -1,5 +1,5 @@
 
 
 
-[Link a la aplicacion](https://manudiiez.github.io/inet-admin/).
+[Link a la aplicacion](https://manudiiez.github.io/inet-client/login).
 
