@@ -29,7 +29,7 @@ const ProtectedRoute = ({ children }) => {
 const ProtectedPriorityRoute = ({ children }) => {
   const { user } = useContext(AuthContext)
 
-  if (user?.rol === 'patiente') {
+  if (user?.rol === 'paciente') {
     return <Navigate to='/patient' />
   }
 
@@ -64,9 +64,9 @@ function App() {
           } />
 
           <Route path="/alert" element={
-            <ProtectedRoute>
+            <ProtectedPriorityRoute>
               <Alert />
-            </ProtectedRoute>
+            </ProtectedPriorityRoute>
           } />
         </Routes>
       </BrowserRouter>
